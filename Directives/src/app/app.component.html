@@ -1,0 +1,34 @@
+<nav aria-label="...">
+    <ul class="pagination">
+        <li class="page-item" [ngClass]="{disabled: currentPage === 0}">
+            <a class="page-link" href="#" (click)="currentPage = currentPage-1">Previous</a>
+        </li>
+        <ng-container *appTimes="images.length; let i = index">
+            <li class="page-item" *ngIf="displayPage(i)" [ngClass]="{active: i === currentPage}">
+                <!-- [ngClass]="getClass()">  some method that returns an array of css classes-->
+                <a class="page-link" href="#" (click)="currentPage = i">
+                    {{ i+1 }}
+                </a>
+            </li>
+        </ng-container>
+        <li class="page-item" [ngClass]="{disabled: currentPage === images.length - 1 }">
+            <a class="page-link" href="#" (click)="currentPage = currentPage+1">Next</a>
+        </li>
+    </ul>
+</nav>
+
+<div>
+    <h4 appClass [backgroundColor]="'white'">
+        {{images[currentPage].title}}
+    </h4>
+    <img [src]="images[currentPage].url">
+</div>
+
+<!-- <div [ngSwitch]="currentPage">
+    <div *ngSwitchCase="0">
+        Current page is 0
+    </div>
+    <div *ngSwitchDefault>
+        Current page is other
+    </div>
+</div> -->

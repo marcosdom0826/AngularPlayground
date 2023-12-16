@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="signupGroup">
+    <app-input [control]="signupGroup.controls.username" [label]="'Username'"></app-input>
+    <app-input [inputType]="'password'" [control]="signupGroup.controls.password" [label]="'Password'"></app-input>
+    <app-input [inputType]="'password'" [control]="signupGroup.controls.passwordConfirmation"
+        [label]="'Confirm Password'"></app-input>
+    <div
+        *ngIf="signupGroup?.controls?.password?.touched &&signupGroup?.controls?.passwordConfirmation?.touched && signupGroup?.errors">
+        <div class="ui red basic label">
+            <p *ngIf="signupGroup?.errors?.passwordsDontMatch">
+                Passwords do not match
+            </p>
+            <p *ngIf="signupGroup?.errors?.noConnection">
+                Can't connect to the server
+            </p>
+            <p *ngIf="signupGroup?.errors?.unknownError">
+                Unknown error. Try again later.
+            </p>
+        </div>
+    </div>
+    <button class="ui submit button primary">Register</button>
+</form>

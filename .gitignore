@@ -1,0 +1,23 @@
+# Ignore nested node_modules folders
+**/node_modules/
+
+# Ignore nested .vscode folders
+**/.vscode/
+
+# Ignore nested VSCode workspace settings
+**/.vscode/
+
+# Ignore nested VSCode project-specific settings
+**/.vscode/.code-workspace
+
+# Ignore nested VSCode user-specific settings
+**/.vscode/settings.json
+
+# Ignore nested VSCode task settings
+**/.vscode/tasks.json
+
+# Ignore nested VSCode launch settings
+**/.vscode/launch.json
+
+# Ignore nested VSCode extensions settings
+**/.vscode/extensions.json

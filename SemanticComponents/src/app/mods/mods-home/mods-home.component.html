@@ -1,0 +1,16 @@
+<app-heading-divider>Modal</app-heading-divider>
+<button (click)="toggleShowModal()" class="ui button">Show Modal</button>
+<app-modal (close)="toggleShowModal()" (submit)="toggleShowModal()" *ngIf="showModal">
+    <ng-container header>
+        Header
+    </ng-container>
+    <p>
+        Content
+    </p>
+    <ng-container footer>
+        <button (click)="toggleShowModal()" class="ui button">Submit</button>
+    </ng-container>
+</app-modal>
+<div class="ui divider hidden"></div>
+<app-heading-divider>Accordion</app-heading-divider>
+<app-accordion [data]="data"></app-accordion>

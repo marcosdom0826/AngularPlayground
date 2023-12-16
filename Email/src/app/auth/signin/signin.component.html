@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="loginGroup">
+    <app-input [control]="loginGroup.controls.username" [label]="'Username'"></app-input>
+    <app-input [inputType]="'password'" [control]="loginGroup.controls.password" [label]="'Password'"></app-input>
+    <button class="ui submit button primary">Login</button>
+    <div *ngIf="loginGroup?.controls?.password?.touched && loginGroup?.errors">
+        <div class="ui red basic label">
+            <p *ngIf="loginGroup?.errors?.credentials">
+                Invalid login or password. Try again.
+            </p>
+        </div>
+    </div>
+</form>

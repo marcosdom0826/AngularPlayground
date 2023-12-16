@@ -1,0 +1,13 @@
+<table class="ui celled table" [ngClass]="tableClasses">
+    <thead>
+        <tr>
+            <th *ngFor="let header of headers">{{header.label}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of data">
+            <td *ngFor="let keys of headers">{{dataItem[keys.key]}}</td>
+        </tr>
+
+    </tbody>
+</table>

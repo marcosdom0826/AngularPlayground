@@ -1,0 +1,12 @@
+<form [formGroup]="equationForm">
+    <div class="mb-6">
+        <label>
+            {{a}} + {{b}} =
+        </label>
+        <input  formControlName="result" />
+    </div>
+
+</form>
+<div class="stats">
+    {{secondsPerSolution | number: '1.1'}}
+</div>
